@@ -1,0 +1,7 @@
+script(type="text/ng-template", id="/partials/entry_main")
+  .row
+    .span3
+      .left-column(ng-include="'/partials/left_bar'")
+    .span9
+      .row
+        .span9.entry-detail(ng-include="'/entry/' + getEntryType() + '/' + getEntryId()")

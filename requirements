@@ -1,0 +1,10 @@
+Flask
+Flask-SQLAlchemy
+Flask-Restless
+Flask-Script
+Flask-Assets
+Flask-Login
+Flask-Zen
+lxml
+pyjade
+cssmin

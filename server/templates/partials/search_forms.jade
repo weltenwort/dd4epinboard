@@ -1,0 +1,225 @@
+script(type="text/ng-template", id="/partials/search_forms/class")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="term")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Role
+      .span5
+        select.span5(ng-model="searchParameters.classRole", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.class.role")
+          option(value="") Any Role
+    .row
+      .span2
+        label Power Source
+      .span5
+        select.span5(ng-model="searchParameters.classPowersource", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.class.powersource")
+          option(value="") Any Power Source
+script(type="text/ng-template", id="/partials/search_forms/paragonpath")
+  form(ng-show="isSearchType('paragon')", ng-submit="searchParagonPath()")
+    .row
+      .span2
+        label Search Term
+      .span10
+        input.span10(type="text", ng-model="searchTerm", name="searchTerm")
+    .row
+      .span2
+        label Class Prerequisite
+      .span4
+        select.span4(ng-model="searchParagonpathPrerequisiteClass", ng-options="x for x in optionsParagonpathPrerequisiteClass")
+          option(value="") Any Class
+      .span2
+        label Race Prerequisite
+      .span4
+        select.span4(ng-model="searchParagonpathPrerequisiteRace", ng-options="x for x in optionsParagonpathPrerequisiteRace")
+          option(value="") Any Race
+    .row
+      .span2.offset2
+        input.btn.btn-primary(type="submit", value="Search")
+script(type="text/ng-template", id="/partials/search_forms/epicdestiny")
+  form(ng-show="isSearchType('epicdestiny')", ng-submit="searchEpicDestiny()")
+    .row
+      .span2
+        label Search Term
+      .span10
+        input.span10(type="text", ng-model="searchTerm", name="searchTerm")
+    .row
+      .span2.offset2
+        input.btn.btn-primary(type="submit", value="Search")
+script(type="text/ng-template", id="/partials/search_forms/power")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="term")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Class
+      .span5
+        select.span5(ng-model="searchParameters.powerClass", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.power.classname")
+          option(value="") Any Class
+    .row
+      .span2
+        label Level
+      .span5
+        input.span2(type="number", ng-model="searchParameters.powerLevelMinimum", min="filterOptions.power.level.minimum", max="filterOptions.power.level.maximum")
+        span.search-range-infix to
+        input.span2(type="number", ng-model="searchParameters.powerLevelMaximum", min="filterOptions.power.level.minimum", max="filterOptions.power.level.maximum")
+    .row
+      .span2
+        label Action
+      .span5
+        select.span5(ng-model="searchParameters.powerAction", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.power.actiontype")
+          option(value="") Any Action
+    .row
+      .span2
+        label Usage
+      .span5
+        select.span5(ng-model="searchParameters.powerUsage", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.power.usagetype")
+          option(value="") Any Usage
+script(type="text/ng-template", id="/partials/search_forms/feat")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="term")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Tier
+      .span5
+        select.span5(ng-model="searchParameters.featTier", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.feat.tier")
+          option(value="") Any Tier
+script(type="text/ng-template", id="/partials/search_forms/deity")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Alignment
+      .span5
+        select.span5(ng-model="searchParameters.deityAlignment", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.deity.alignment")
+          option(value="") Any Alignment
+script(type="text/ng-template", id="/partials/search_forms/monster")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Level
+      .span5
+        select.span5(ng-model="searchParameters.monsterLevel", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.monster.level")
+          option(value="") Any Level
+    .row
+      .span2
+        label Group Role
+      .span5
+        select.span5(ng-model="searchParameters.monsterGroupRole", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.monster.grouprole")
+          option(value="") Any Group Role
+script(type="text/ng-template", id="/partials/search_forms/item")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Cost
+      .span5
+        input.span2(type="number", ng-model="searchParameters.itemCostMinimum", min="filterOptions.item.cost.minimum", max="filterOptions.item.cost.maximum")
+        span.search-range-infix to
+        input.span2(type="number", ng-model="searchParameters.itemCostMaximum", min="filterOptions.item.cost.minimum", max="filterOptions.item.cost.maximum")
+    .row
+      .span2
+        label Level
+      .span5
+        input.span2(type="number", ng-model="searchParameters.itemLevelMinimum", min="filterOptions.item.level.minimum", max="filterOptions.item.level.maximum")
+        span.search-range-infix to
+        input.span2(type="number", ng-model="searchParameters.itemLevelMaximum", min="filterOptions.item.level.minimum", max="filterOptions.item.level.maximum")
+    .row
+      .span2
+        label Category
+      .span5
+        select.span5(ng-model="searchParameters.itemCategory", ng-options="'{1}|{2}'.assign(c[0][0], c[0][1]) as '{1} ({2})'.assign(c[0][1], c[1]) group by c[0][0] for c in filterOptions.item.category")
+          option(value="") Any Category
+script(type="text/ng-template", id="/partials/search_forms/glossary")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Category
+      .span5
+        select.span5(ng-model="searchParameters.glossaryCategory", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.glossary.category")
+          option(value="") Any Category
+    .row
+      .span2
+        label Type
+      .span5
+        select.span5(ng-model="searchParameters.glossaryType", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.glossary.glossarytype")
+          option(value="") Any Type
+script(type="text/ng-template", id="/partials/search_forms/race")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+script(type="text/ng-template", id="/partials/search_forms/ritual")
+  form.search-form(ng-submit="search(true)")
+    .row
+      .span2
+        label Search Term
+      .span5
+        input.span5(type="text", ng-model="searchParameters.term", name="searchTerm")
+      .span2
+        input.btn.btn-primary(type="submit", value="Search")
+    .row
+      .span2
+        label Cost
+      .span5
+        input.span2(type="number", ng-model="searchParameters.ritualCostMinimum", min="filterOptions.ritual.cost.minimum", max="filterOptions.ritual.cost.maximum")
+        span.search-range-infix to
+        input.span2(type="number", ng-model="searchParameters.ritualCostMaximum", min="filterOptions.ritual.cost.minimum", max="filterOptions.ritual.cost.maximum")
+    .row
+      .span2
+        label Level
+      .span5
+        input.span2(type="number", ng-model="searchParameters.ritualLevelMinimum", min="filterOptions.ritual.level.minimum", max="filterOptions.ritual.level.maximum")
+        span.search-range-infix to
+        input.span2(type="number", ng-model="searchParameters.ritualLevelMaximum", min="filterOptions.ritual.level.minimum", max="filterOptions.ritual.level.maximum")
+    .row
+      .span2
+        label Category
+      .span5
+        select.span5(ng-model="searchParameters.ritualKeyskill", ng-options="label as '{1} ({2})'.assign(label, count) for (label, count) in filterOptions.ritual.keyskill")
+          option(value="") Any Key Skill

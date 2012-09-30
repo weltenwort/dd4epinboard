@@ -1,0 +1,26 @@
+doctype 5
+html(lang="en",ng-app="dd4epinboard")
+  head
+    title DnD 4e Pinboard
+    - assets "css_all"
+      link(rel="stylesheet", type="text/css", href=ASSET_URL)
+    - endassets
+    - assets "js_all"
+      script(type="text/javascript", src=ASSET_URL)
+    - endassets
+  body(ng-controller="MainController")
+    include partials/login.jade
+    include partials/leftbar.jade
+    include partials/pinboard.jade
+    include partials/search.jade
+    include partials/entry.jade
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container(ng-controller="AuthController")
+          a.brand(href="#") DnD 4e Pinboard
+          ul.nav.pull-right(ng-show="isAuthenticated()")
+            li
+              p.navbar-text {+session.username+}
+            li
+              a(ng-click="logout()", href="") Log out
+    .container.body-margin-top(ng-view="ng-view")

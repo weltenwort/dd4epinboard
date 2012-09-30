@@ -1,0 +1,64 @@
+script(type="text/ng-template", id="/partials/search_entries/feat")
+  .span6
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span3
+    .search-result-entry-label {+ entry.tiername +}
+script(type="text/ng-template", id="/partials/search_entries/deity")
+  .span6
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span3
+    .search-result-entry-label {+ entry.alignment +}
+script(type="text/ng-template", id="/partials/search_entries/class")
+  .span5
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span2
+    .search-result-entry-label {+ entry.rolename +}
+  .span2
+    .search-result-entry-label {+ entry.powersourcetext +}
+script(type="text/ng-template", id="/partials/search_entries/monster")
+  .span6
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span3
+    .search-result-entry-label {+ entry.level +}
+script(type="text/ng-template", id="/partials/search_entries/power")
+  .span3
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span2
+    .search-result-entry-label {+ entry.classname +}
+  .span2
+    .search-result-entry-label {+ entry.actiontype +}
+  .span2
+    .search-result-entry-label {+ entry.usagetype +}
+script(type="text/ng-template", id="/partials/search_entries/item")
+  .span5
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span2
+    .search-result-entry-label {+ entry.cost +}
+  .span2
+    .search-result-entry-label {+ entry.level +}
+script(type="text/ng-template", id="/partials/search_entries/glossary")
+  .span5
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span2
+    .search-result-entry-label {+ entry.category +}
+  .span2
+    .search-result-entry-label {+ entry.glossarytype +}
+script(type="text/ng-template", id="/partials/search_entries/race")
+  .span9
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+script(type="text/ng-template", id="/partials/search_entries/ritual")
+  .span5
+    .search-result-entry-label
+      a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+  .span2
+    .search-result-entry-label {+ entry.level +}
+  .span2
+    .search-result-entry-label {+ entry.keyskilldescription +}

@@ -1,0 +1,55 @@
+script(type="text/ng-template", id="/partials/pinboard_main")
+  .row
+    .span3
+      .left-column(ng-include="'/partials/left_bar'")
+    .span9(ng-include="'/partials/pinboard_header_' + getMode()")
+script(type="text/ng-template", id="/partials/pinboard_header_view")
+  .row.pinboard-name
+    .span5
+      h1 {+ pinboard.name +}
+    .span4(ng-show="isOwnPinboard(pinboard)")
+      .row
+        .span2
+          input.span2.btn.btn-danger(type="button", ng-click="remove()", value="Remove")
+        .span2
+          input.span2.btn.btn-primary(type="button", ng-click="edit()", value="Edit")
+  .row.pinboard-header
+    .span9
+      .row
+        .span9
+          p {+ pinboard.description +}
+  .row.pinboard-entries
+    .span9
+      .row(ng-repeat="entryType in pinboard.entries|pluck:'entry_type'|unique|order")
+        .span9
+          .row
+            .span9
+              .pinboard-list-header {+ translateEntryType(entryType) +}
+          .row(ng-repeat="entry in pinboard.entries|filter:{entry_type: entryType}")
+            .span8
+              .pinboard-entry-label
+                a(ng-href="#/entry/{+entry.entry_type+}/{+entry.id+}") {+ entry.name +}
+            .span1
+              .pinboard-entry-controls(ng-show="isOwnPinboard(pinboard)")
+                a(ng-click="removeEntryFromPinboard(pinboard, entry)")
+                  i.icon-remove
+script(type="text/ng-template", id="/partials/pinboard_header_edit")
+  form(ng-submit="save()")
+    .row.pinboard-name
+      .span7
+        input.span7(type="text", name="pinboardName", ng-model="pinboard.name", placeholder="Pinboard Name")
+      .span2
+        input.span2.btn.btn-success(type="submit", value="Save")
+    .row.pinboard-header
+      .span9
+        .row
+          .span9
+            textarea.span9(name="pinboardDescription", ng-model="pinboard.description", placeholder="Pinboard Description")
+        .row
+          .span9
+            label.checkbox
+              input(type="checkbox", name="pinboardPublic", ng-model="pinboard.public")
+              span Publicly Visible
+script(type="text/ng-template", id="/partials/pinboard_remove_confimation_dialog")
+  div#dialog-confirm-remove(title="Remove current pinboard?")
+    p Remove the currently displayed pinboard?

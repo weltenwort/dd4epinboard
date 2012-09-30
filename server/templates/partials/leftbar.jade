@@ -1,0 +1,39 @@
+script(type="text/ng-template", id="/partials/left_bar")
+  ul.nav.nav-list(ng-controller="NavbarController")
+    li.nav-header 
+      span Search
+    li(ng-class="{active: isSearchType('class')}")
+      a(href="#/search/class") Class
+    li(ng-class="{active: isSearchType('deity')}")
+      a(href="#/search/deity") Deity
+    li(ng-class="{active: isSearchType('feat')}")
+      a(href="#/search/feat") Feat
+    li(ng-class="{active: isSearchType('glossary')}")
+      a(href="#/search/glossary") Glossary
+    li(ng-class="{active: isSearchType('item')}")
+      a(href="#/search/item") Item
+    li(ng-class="{active: isSearchType('monster')}")
+      a(href="#/search/monster") Monster
+    li(ng-class="{active: isSearchType('power')}")
+      a(href="#/search/power") Power
+    li(ng-class="{active: isSearchType('race')}")
+      a(href="#/search/race") Race
+    li(ng-class="{active: isSearchType('ritual')}")
+      a(href="#/search/ritual") Ritual
+    li.nav-header
+      span My Pinboards
+      .nav-header-controls
+        a(href="#/pinboard/new")
+          i.icon-plus-sign
+    li(ng-repeat="pinboard in getOwnPinboards()")
+      a(ng-href="#/pinboard/{+pinboard.id+}")
+        span {+ pinboard.name +}
+      .nav-item-controls(ng-show="getEntryType() != null")
+        a(ng-show="isEntryInPinboard(pinboard)", ng-click="removeEntryFromPinboard(pinboard)")
+          i.icon-star
+        a(ng-hide="isEntryInPinboard(pinboard)", ng-click="addEntryToPinboard(pinboard)")
+          i.icon-star-empty
+    li.nav-header
+      span Other's Pinboards
+    li(ng-repeat="pinboard in getOtherPinboards()|order:'owner_username'")
+      a(ng-href="#/pinboard/{+pinboard.id+}") {+ pinboard.owner_username +}: {+ pinboard.name +}

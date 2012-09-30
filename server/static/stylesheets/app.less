@@ -1,0 +1,718 @@
+/* vim: set ft=less : */
+@import "bootstrap/bootstrap.less";
+
+@neutral-color: #DDD;
+@class-color: #1D3D5E;
+@atwill-color: #619869;
+@encounter-color: #961334;
+@daily-color: #4D4D4F;
+
+body {
+    /*padding-top: 60px;*/
+}
+
+.body-margin-top {
+    margin-top: 60px;
+}
+
+.left-column {
+    .well;
+    padding: 8px 0;
+
+    .nav-header-controls {
+        float: right;
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    li {
+        position: relative;
+
+        .nav-item-controls {
+            position: absolute;
+            top: 3px;
+            right: 0;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.search-form {
+    .makeColumn(9);
+    padding: 11px 0;
+    margin-bottom: 0;
+
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    /*border-bottom: 1px solid rgba(0,0,0,.05);*/
+    /*.box-shadow(inset 0 -1px 1px rgba(0,0,0,.05));*/
+}
+
+.search-result-headers, .pinboard-list-headers {
+}
+
+.search-result-header, .pinboard-list-header {
+    padding: 8px;
+    font-weight: bold;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.search-result-entry-label, .pinboard-entry-label {
+    padding: 8px;
+}
+
+.pinboard-entry-controls {
+    padding: 8px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.pinboard-name {
+    margin-bottom: 17px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.search-range-infix {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/*
+ * stat block
+ */
+.entry-detail {
+	background: #fff;
+	/*float: left;*/
+	/*padding: 15px;*/
+	/*width: 560px;*/
+    color: #000000;
+}
+.entry-detail {
+    font-size: 8.75pt;
+}
+.entry-detail p {
+	padding-left: 15px;
+	color: #000000;
+	font-size: 8.75pt;	
+}
+.entry-detail table {
+	width: 100%;
+}
+.entry-detail table td {
+	vertical-align: top;
+	padding: 0 10px 0;
+	background: #d6d6c2;
+	border-bottom: 1px solid #fff;
+}
+.entry-detail p.flavor,
+.entry-detail span.flavor,
+.entry-detail ul.flavor {
+	display: block;
+	padding: 2px 15px;
+	margin: 0;
+	background: #d6d6c2;
+	font-size:8.75pt;
+}
+.entry-detail p.powerstat {
+	padding: 0px 0px 0px 15px;
+	margin: 0;
+	background: #FFFFFF;
+	font-size:8.75pt;
+}
+.entry-detail span.ritualstats {
+	float:right;
+	padding: 0 30px 0 0;
+}
+.entry-detail p.flavorIndent {
+	display: block;
+	padding: 2px 15px 2px 30px;
+	margin: 0;
+	background: #d6d6c2;
+}
+.entry-detail span.clearIndent {
+	display: block;
+	padding: 2px 15px 2px 30px;
+	margin: 0;
+	background: #FFFFFF;
+}
+.entry-detail p.alt,
+.entry-detail span.alt,
+.entry-detail td.alt {
+	background: #c3c6ad;
+}
+.entry-detail th {
+    background: #1d3d5e;
+    color: #fff;
+    text-align: left;
+    padding: 0 0 0 5px;
+}
+.entry-detail i,
+.entry-detail em {
+	font-style: italic;
+}
+.entry-detail ul {
+    list-style: disc;
+    margin: 1em 0 1em 30px;
+}
+.entry-detail table,
+.entry-detail ul.flavor {
+	margin-bottom: 1em;
+}
+.entry-detail ul li {
+    color: #3e141e;
+}
+.entry-detail ul.flavor li {
+	list-style-image: url("http://www.wizards.com/dnd/images/symbol/x.gif");
+	margin-left: 15px;
+}
+.entry-detail a {
+    color: #3e141e;
+}
+.entry-detail blockquote
+{
+	padding: 0 0 0 22px;
+	background: #d6d6c2;
+    border: 0px;
+}
+.entry-detail span.block 
+{
+    display: block;
+	padding: 0 0 0 22px;
+	background: #d6d6c2;
+}
+.entry-detail h1 {
+    font-size: 1.09em;
+    line-height: 2;
+    padding-left: 15px;
+    margin: 0;
+    color: #fff;
+    background: #000;
+}
+
+.entry-detail h1.player {
+    background: #1d3d5e;
+    font-size: 1.35em;
+}
+.entry-detail h1.dm {
+    background: #5c1f34;
+}
+.entry-detail h1.trap {
+    background: #5c1f34;
+    height:38px;
+}
+.entry-detail h1.atwillpower {
+    background: #619869;
+}
+.entry-detail h1.encounterpower {
+    background: #961334;
+}
+.entry-detail h1.dailypower {
+    background: #4d4d4f;
+}
+.entry-detail span.milevel {
+    font-size:9pt;
+}
+.entry-detail h1.poison {
+    background: #000000;
+}
+.entry-detail h1.poison .level {
+    padding-right: 15px;
+	margin-top: 0;
+	text-align: right;
+	float: right;
+	position:relative;
+	top:-24px;    
+}
+.entry-detail h1.utilitypower {
+    background: #1c3d5f;
+}
+.entry-detail h1.familiar 
+{
+	background: #4e5c2e;
+}
+.entry-detail h1 .level {
+    padding-right: 15px;
+	margin-top: 0;
+	text-align: right;
+	float: right;
+}
+.entry-detail .rightalign {
+	text-align: right;
+}
+/* Traps */
+.entry-detail h1.trap .level {
+	margin-top: 0;
+	text-align: right;
+	position:relative;
+	top:-60px;
+}
+.entry-detail h1.trap .type,
+.entry-detail h1.trap .xp {
+	display: block;
+	position: relative;
+	z-index: 99;
+	top: -0.75em;
+	height: 1em;
+	font-weight: normal;
+	font-size: 0.917em;
+}
+.entry-detail .traplead {
+	display: block;
+	padding: 1px 15px;
+	margin: 0;
+	background: #ffffff;
+}
+.entry-detail .trapblocktitle {
+	display: block;
+	padding: 1px 15px;
+	margin: 0;
+	background: #d6d6c2;
+	font-weight: bold;
+}
+.entry-detail .trapblockbody {
+	display: block;
+	padding: 1px 15px 1px 30px;
+	margin: 0;
+	background: #ffffff;
+}
+
+/* Detail page related link section */
+/* -------------------------------------------- */
+
+.entry-detail #RelatedArticles h5 {
+	width: 100px;
+	float: left;
+	padding-top: 10px;
+	padding-left: 20px;
+	color: #3e141e;
+	font-weight: bold;
+}
+.entry-detail #RelatedArticles ul.RelatedArticles {
+	padding: 10px 0 0 0;
+	float: right;
+	width: 430px;
+	margin: 0;
+	list-style: none;
+}
+
+.entry-detail .bodytable {
+	border: 0;
+	margin: 0;
+	/*width: 560px;*/
+	background: #D1D1BC;
+}
+.entry-detail .bodytable td {
+	border-bottom: none;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.entry-detail h2 {
+    font-size: 1.25em;
+    padding-left: 15px;
+    margin: 0;
+    color: #fff;
+    background: #4e5c2e;
+    height:20px;
+    font-variant: small-caps;
+    padding-top: 5px;
+}
+
+/* Monster */
+.entry-detail h1.monster {
+    background: #4e5c2e;
+    height:38px;
+}
+.entry-detail h1.monster .level {
+	margin-top: 0;
+	text-align: right;
+	position:relative;
+	top:-60px;
+}
+.entry-detail h1.monster .type,
+.entry-detail h1.monster .xp {
+	display: block;
+	position: relative;
+	z-index: 99;
+	top: -0.75em;
+	height: 1em;
+	font-weight: normal;
+	font-size: 0.917em;
+}
+.entry-detail h2.monster {
+    font-size: 9pt;
+    padding-left: 15px;
+    margin: 0;
+    color: #fff;
+    background: #4e5c2e;
+    height:20px;
+    font-variant: small-caps;
+    padding-top: 3px;
+}
+.entry-detail h3.monster {
+	font-size: 8;
+	font-weight: bold;
+	color: #000000;
+	background: #c3c6ad;
+	padding: 0px 5px 0px 10px;
+	margin: 0;
+	display: block;
+}
+.entry-detail p.monster {
+	display: block;
+	padding: 2px 15px;
+	margin: 0;
+	background: #CADBB7;
+	font-size:8.75pt;	
+	display: block;
+}
+.entry-detail p.monstat {
+	background: #CADBB7;
+}
+
+/* Magic Items */
+.entry-detail h1.magicitem {
+    background: #DA9722;
+    font-size:12pt;
+    font-weight:bold;
+	height: 17pt;
+	margin-top: 2;
+	line-height: 1.5em;
+}
+.entry-detail h1.magicitem .milevel {
+    padding-right: 15px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+}
+.entry-detail h1.mihead {
+    background: #DA9722;
+    font-size:12pt;
+    font-weight:bold;
+	height: 17pt;
+	margin-top: 2;
+	line-height: 1.5em;
+}
+.entry-detail h1.mihead .milevel {
+    padding-right: 15px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+}
+.entry-detail p.miflavor {
+	display: block;
+	padding: 2px 15px;
+	margin: 0;
+	background: #EFD09F;
+	font-size:8.75pt;
+	font-style: italic;
+	color: #000000;
+}
+.entry-detail table.magicitem {
+    /*width: 560px;*/
+    margin-bottom: 0;
+}
+.entry-detail table.magicitem td {
+    border: none;
+    font-size: 8.75pt;
+	background: #F8E9D5;
+}
+.entry-detail td.mic1 {
+    padding-left: 20px;
+    padding-right: 0px;
+    width: 50px;
+}
+.entry-detail td.mic2 {
+    width: 40px;
+    padding: 0px;
+}
+.entry-detail td.mic3 {
+    width: 100px;
+    text-align:right;
+    padding: 0px;
+}
+.entry-detail td.mic4 {
+    width: 100px;
+    padding: 0px;
+}
+.entry-detail h2.magicitem {
+    background: #EFD09F;
+    color: #000000;
+    font-variant: normal;
+    font-size: 8.75pt;
+    line-height: 18px;
+    padding-top: 0px;
+    vertical-align: bottom;
+    height: 18px;
+}
+.entry-detail h2.mihead {
+	display: block;
+    background: #EFD09F;
+    color: #000000;
+    font-variant: normal;
+    font-size: 8.75pt;
+    line-height: 18px;
+    padding-top: 0px;
+    vertical-align: bottom;
+    height: 18px;
+}
+.entry-detail p.publishedIn {
+    font-size: 8pt;
+    margin-top: 10px;
+}
+.entry-detail h2.artifactHeading1 {
+	font-size: 14pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #254950;
+	font-variant: normal;
+}
+.entry-detail h2.artifactHeading2 {
+	font-size: 14pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #556C75;
+	font-variant: normal;
+}
+.entry-detail h2.ah1 {
+	font-size: 14pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #254950;
+	font-variant: normal;
+}
+.entry-detail h2.ah2 {
+	font-size: 14pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #556C75;
+	font-variant: normal;
+}
+.entry-detail h2.ah3 {
+	font-size: 12pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	margin: 0px;
+	background: #FFFFFF;
+	color: #556C75;
+	font-variant: normal;
+}
+.entry-detail p.mistat {
+	padding: 0px 0px 0px 15px;
+	display: block;
+	margin: 0;
+	background: #F8E9D5;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail p.mistatAI {
+	padding: 0px 0px 0px 15px;
+	margin: 0;
+	background: #F8E9D5;
+	font-size:8.75pt;
+	color: #000000;
+	height: 36px;
+}
+.entry-detail span.miright {
+	padding: 0px 5px 0px 0px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+}
+.entry-detail p.indent {
+	padding: 0px 0px 0px 30px;
+	text-indent: -15px;
+}
+.entry-detail p.indent1 {
+	padding: 0px 0px 0px 45px;
+	text-indent: -15px;
+}
+.entry-detail p.indent2 {
+	padding: 0px 0px 0px 60px;
+	text-indent: -15px;	
+}
+.entry-detail p.mitext {
+	padding: 0px 0px 0px 5px;
+	margin: 0;
+	background: #FFFFFF;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail ul.mitext {
+	margin-bottom: 1em;
+	display: block;
+	padding: 2px 5px;
+	margin-top: 0;
+	margin-right: 0;
+	background: #FFFFFF;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail ul.mitext li {
+	list-style-image: url("http://www.wizards.com/dnd/images/symbol/x.gif");
+	color: #000000;
+}
+.entry-detail ul.mistat {
+	margin-bottom: 0;
+	padding: 2px 5px 2px 30px;
+	margin: 0;
+	background: #F8E9D5;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail ul.mistat li {
+	list-style-image: url("http://www.wizards.com/dnd/images/symbol/x.gif");
+	color: #000000;
+}
+.entry-detail h1.miset {
+    background: #22444B;
+    font-size:12pt;
+    font-weight:bold;
+	height: 17pt;
+	margin-top: 2;
+	line-height: 1.5em;
+}
+.entry-detail h1.miset .milevel {
+    padding-right: 15px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+}
+.ignore { }
+.entry-detail th.miset {
+    background: #22444B;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 0 0 0 5px;	
+}
+/*
+.entry-detail h1.thHead {
+    background: #45133C;
+    font-size:12pt;
+    font-weight:bold;
+	height: 17pt;
+	margin-top: 2;
+	line-height: 1.5em;
+}
+.entry-detail h1.thHead .thLevel {
+    padding-right: 15px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+	top: -1.5em;
+}
+
+.entry-detail p.thSubHead  {
+    background: #45133C;
+	color: white;
+	font-weight: normal;
+	font-size: 8.75pt;
+	line-height: 1.2em;
+}
+.entry-detail p.thSubHead .thXP {
+    padding-right: 15px;
+	margin-top: 0px;
+	text-align: right;
+	float: right;
+	position:relative;
+	top: -1.2em;
+}
+*/
+.entry-detail h1.thHead {
+    background: #45133C;
+    height:38px;
+}
+.entry-detail h1.thHead .thLevel {
+	margin-top: 0;
+	text-align: right;
+	position:relative;
+	top:-60px;
+    padding-right: 15px;
+	float: right;
+}
+.entry-detail h1.thHead .thSubHead,
+.entry-detail h1.thHead .thXP {
+	display: block;
+	position: relative;
+	z-index: 99;
+	top: -0.75em;
+	height: 1em;
+	font-weight: normal;
+	font-size: 0.917em;
+}
+.entry-detail h2.thHead {
+	display: block;
+    background: #65345D;
+    color: #FFFFFF;
+    font-variant: small-caps;
+    font-size: 8.75pt;
+    line-height: 18px;
+    padding-top: 0px;
+    vertical-align: bottom;
+    height: 18px;
+}
+.entry-detail p.thBody {
+	padding: 0px 0px 0px 30px;
+	text-indent: -15px;
+	display: block;
+	margin: 0;
+	background: #E8F2D6;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail p.tbod {
+	padding: 0px 0px 0px 45px;
+	text-indent: -15px;
+	display: block;
+	margin: 0;
+	background: #E8F2D6;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail p.thStat {
+	padding: 0px 0px 0px 15px;
+	display: block;
+	margin: 0;
+	background: #E8F2D6;
+	font-size:8.75pt;
+	color: #000000;
+}
+.entry-detail span.thInit {
+	background: #E8F2D6;
+	font-size:8.75pt;
+	color: #000000;
+	position: absolute;
+	left: 400px;
+	top: 53px;
+}
+.entry-detail p.th2 {
+	padding: 0px 0px 0px 15px;
+	display: block;
+	margin: 0;
+	background: #CADBB7;
+	font-size:8.75pt;
+	color: #000000;
+}

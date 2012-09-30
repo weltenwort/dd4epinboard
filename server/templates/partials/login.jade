@@ -1,0 +1,20 @@
+script(type="text/ng-template", id="/partials/login")
+  .row
+    .span12
+      .alert.alert-error {+ authMessage +}
+  .row
+    .span12
+      form(ng-submit="login(loginUsername, loginPassword)")
+        .row
+          .span2
+            label Username
+          .span10
+            input.span6(type="text", ng-model="loginUsername")
+        .row
+          .span2
+            label Password
+          .span10
+            input.span6(type="password", ng-model="loginPassword")
+        .row
+          .span2.offset2
+            input.btn.btn-primary(type="submit", value="Login")

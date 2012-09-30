@@ -1,0 +1,29 @@
+include /partials/search_forms.jade
+include /partials/search_headers.jade
+include /partials/search_entries.jade
+script(type="text/ng-template", id="/partials/search_main")
+  .row
+    .span3
+      .left-column(ng-include="'/partials/left_bar'")
+    .span9
+      .row.search-form-panel(ng-include="'/partials/search_forms/' + getSearchEntryType()")
+      .row.search-results-navigation
+        .span9
+          .pagination
+            ul
+              li(ng-class="{disabled: getCurrentPage() < 2}")
+                a(ng-click="setCurrentPage(getCurrentPage()-1)") &laquo;
+              li(ng-repeat="page in getPageRange()", ng-class="{active: page.active, disabled: page.disabled}")
+                a(ng-click="setCurrentPage(page.label)") {+ page.label +}
+              li(ng-class="{disabled: getCurrentPage() >= getTotalPageCount()}")
+                a(ng-click="setCurrentPage(getCurrentPage()+1)") &raquo;
+      .row.search-result-list
+        .span9
+          .row.search-result-headers(ng-include="'/partials/search_headers/' + getSearchEntryType()")
+          .row.search-result-entry(ng-repeat="entry in getEntries()", ng-include="'/partials/search_entries/' + getSearchEntryType()")
+script(type="text/ng-template", id="/list_panels/search")
+  span foo
+  ul.entry-list(ng-controller="SearchListController")
+    li.entry-list-item(ng-repeat="entry in getListedEntries()")
+      .entry-list-item-stripe.stripe-default
+      a.entry-list-item-title {+ entry.name +}
