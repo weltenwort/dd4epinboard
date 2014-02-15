@@ -1,6 +1,6 @@
-module = angular.module "dd4epinboard.search", []
+module = angular.module "dd4epinboard.search", ["dd4epinboard.login"]
 
-module.factory "searchservice", ($http, $rootScope) ->
+module.factory "searchservice", ($http, $rootScope, loginservice) ->
     wrapLike = (value) ->
         if value
             "%#{value}%"
@@ -15,6 +15,8 @@ module.factory "searchservice", ($http, $rootScope) ->
             @page = 1
             @totalPages = 0
             @filterOptions = {}
+
+            loginservice.initialized.then @loadOptions
 
         performSearch: (query) =>
             query.page ?= 1
@@ -140,7 +142,7 @@ module.factory "searchservice", ($http, $rootScope) ->
 
     return new SearchService()
 
-module.controller "SearchController", ($scope, $routeParams, $location, $rootScope, searchservice) ->
+module.controller "SearchController", ($scope, $routeParams, $location, $rootScope, searchservice, loginservice) ->
     # ====================
     # default variables
     # ====================
@@ -312,7 +314,6 @@ module.controller "SearchController", ($scope, $routeParams, $location, $rootSco
     # events
     # ====================
     $rootScope.$on("SearchStart", -> $scope.updateLocation())
-    $rootScope.$on("LoginSuccessful", -> $scope.loadOptions())
 
     # ====================
     # init
